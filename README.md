@@ -1,24 +1,24 @@
-# PrØÐiGy™ Theme for Steam
+# :skull: PrØÐiGy™ Theme for Steam
 
 > A smooth, dark Theme for Steam
 
-## Notice
+## :warning: Notice
 
 This theme is still work in proggress and not yet ready for public usage!
 
-## Screenshots
+## :camera: Screenshots
 
 `// TODO: Add screenshots to showcase theme`
 
-## Installation
+## :package: Installation
 
 `// TODO: Add installation instructions`
 
-## Building
+## :construction: Building
 
 `// TODO: Add building instructions`
 
-## Contributing
+## :bug: Contributing
 
 `// TODO: Add contribution guide`
 
