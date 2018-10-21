@@ -1,0 +1,53 @@
+language: node_js
+node_js:
+  - "10"
+dist: trusty
+sudo: false
+
+cache:
+  directories:
+    - node_modules
+
+stages:
+  - lint
+  - name: package
+    if: branch = master
+  - name: deploy
+    if: branch = master
+
+addons:
+  apt:
+    update: true
+    packages: yarn
+
+install:
+  - yarn
+
+before_script:
+  - yarn global add gulp
+
+jobs:
+  include:
+    - stage: lint
+      script: 
+        - yarn lint
+        - yarn docs:lint
+    - stage: package
+      script:
+        - yarn build
+    - stage: deploy
+      provider: pages
+      skip-cleanup: true
+      github-token: $GITHUB_TOKEN
+      keep-history: true
+      on:
+        branch: develop
+
+notifications:
+  email: false
+  slack:
+    rooms:
+      - 'pddstudio:VcFiW1hwvEHqbCwtBKA38Eh2'
+    on_success: change
+    on_failure: always
+
