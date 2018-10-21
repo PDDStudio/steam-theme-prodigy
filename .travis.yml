@@ -36,7 +36,8 @@ script:
 
 before_deploy:
   - yarn global add now
-  - yarn docs:install-deps
+  - pip install --upgrade pip
+  - pip install --user -r docs/requirements.txt
   - yarn docs:build
 
 deploy:
