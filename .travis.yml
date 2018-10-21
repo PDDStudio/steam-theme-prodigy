@@ -23,6 +23,7 @@ addons:
         key_url: 'https://dl.yarnpkg.com/debian/pubkey.gpg'
     packages: 
       - yarn
+      - mkdocs
       - python2.7
 
 install:
