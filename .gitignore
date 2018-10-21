@@ -77,16 +77,9 @@ $RECYCLE.BIN/
 *.log
 **/*.log
 
-# Exclude server build output
-server/dist
-server/out
-
 # Exclude documentation builds
 docs/build
 
-sinusbot/data/*
-!sinusbot/data/.gitkeep
-sinusbot/scripts/*
-!sinusbot/scripts/.gitkeep
+dist/**
 
 # End of https://www.gitignore.io/api/git,macos,windows,gitbook,dotfilessh

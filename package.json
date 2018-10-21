@@ -12,7 +12,23 @@
   "bugs": {
     "url": "https://github.com/pddstudio/steam-theme-prodigy/issues"
   },
-  "scripts": {},
+  "scripts": {
+    "lint": "echo 'Nothing to lint yet'",
+    "build": "echo 'Nothing to build yet'",
+    "docs:install-deps": "pip install -r docs/requirements.txt",
+    "docs:build": "mkdocs build --clean --config-file docs/mkdocs.yml",
+    "docs:debug": "mkdocs serve --config-file docs/mkdocs.yml",
+    "docs:lint": "markdownlint --config .markdownlint.json docs"
+  },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "conventional-changelog-cli": "^2.0.5",
+    "gulp": "^3.9.1",
+    "husky": "^1.1.2",
+    "lint-staged": "^7.3.0",
+    "markdownlint-cli": "^0.13.0",
+    "prettier": "^1.14.3",
+    "release-it": "^7.6.2",
+    "rimraf": "^2.6.2"
+  }
 }

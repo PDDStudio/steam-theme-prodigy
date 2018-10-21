@@ -1,0 +1,65 @@
+# general information
+
+site_name: PrØÐiGy™ Steam Theme
+site_description: Documentation for PrØÐiGy™ Steam Theme.
+site_author: Patrick Jung
+site_url: https://pddstudio.github.io/steam-theme-prodigy/
+
+repo_name: 'steam-theme-prodigy'
+repo_url: 'https://github.com/pddstudio/steam-theme-prodigy/'
+
+copyright: 'Copyright &copy; 2018 Patrick Jung'
+
+# configure build behavior
+strict: true
+docs_dir: pages/
+site_dir: ../dist/docs/
+
+# customizing theme & plugins
+theme:
+  name: 'material'
+  language: 'en'
+  palette:
+    primary: 'green'
+    accent: 'green'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  logo:
+    icon: 'description'
+  feature:
+    tabs: false
+
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/pddstudio'
+    - type: 'twitter'
+      link: 'https://twitter.com/pdds_'
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# navigation
+nav:
+  - Home: index.md
+  - Installing: INSTALLING.md
