@@ -13,6 +13,8 @@
     "url": "https://github.com/pddstudio/steam-theme-prodigy/issues"
   },
   "scripts": {
+    "lint": "echo 'Nothing to lint yet'",
+    "build": "echo 'Nothing to build yet'",
     "docs:install-deps": "pip install -r docs/requirements.txt",
     "docs:build": "mkdocs build --clean --config-file docs/mkdocs.yml",
     "docs:debug": "mkdocs serve --config-file docs/mkdocs.yml",
