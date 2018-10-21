@@ -2,6 +2,8 @@
 
 > A smooth, dark Theme for Steam
 
+[![Build Status](https://travis-ci.com/PDDStudio/steam-theme-prodigy.svg?branch=develop)](https://travis-ci.com/PDDStudio/steam-theme-prodigy)
+
 ## :warning: Notice
 
 This theme is still work in proggress and not yet ready for public usage!
