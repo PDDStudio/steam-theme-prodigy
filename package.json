@@ -12,7 +12,12 @@
   "bugs": {
     "url": "https://github.com/pddstudio/steam-theme-prodigy/issues"
   },
-  "scripts": {},
+  "scripts": {
+    "docs:install-deps": "pip install -r docs/requirements.txt",
+    "docs:build": "mkdocs build --clean --config-file docs/mkdocs.yml",
+    "docs:debug": "mkdocs serve --config-file docs/mkdocs.yml",
+    "docs:lint": "markdownlint --config .markdownlint.json docs"
+  },
   "dependencies": {},
   "devDependencies": {
     "conventional-changelog-cli": "^2.0.5",
