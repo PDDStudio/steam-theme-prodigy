@@ -1,0 +1,5 @@
+{
+  "name": "prodigy-theme-documentation",
+  "type": "static",
+  "public": "dist/docs"
+}
