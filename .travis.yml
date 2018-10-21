@@ -37,6 +37,7 @@ jobs:
         - yarn build
     - stage: deploy
       provider: pages
+      local-dir: dist/docs
       skip-cleanup: true
       github-token: $GITHUB_TOKEN
       keep-history: true
