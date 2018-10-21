@@ -21,13 +21,19 @@ addons:
     sources:
       - sourceline: 'deb https://dl.yarnpkg.com/debian/ stable main'
         key_url: 'https://dl.yarnpkg.com/debian/pubkey.gpg'
-    packages: yarn
+    packages: 
+      - yarn
+      - python2.7
 
 install:
   - yarn
 
 before_script:
-  - yarn global add gulp
+  - yarn global add gulp-cli
+
+before_deploy:
+  - yarn docs:install-deps
+  - yarn docs:build
 
 jobs:
   include:
