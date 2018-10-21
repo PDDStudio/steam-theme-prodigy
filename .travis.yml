@@ -31,9 +31,21 @@ install:
 before_script:
   - yarn global add gulp-cli
 
+script:
+  - yarn build
+
 before_deploy:
+  - yarn global add now
   - yarn docs:install-deps
   - yarn docs:build
+
+deploy:
+  - provider: script
+    script: now --token $NOW_TOKEN
+    skip_cleanup: true
+    on:
+      all_branches: true
+      master: false
 
 jobs:
   include:
