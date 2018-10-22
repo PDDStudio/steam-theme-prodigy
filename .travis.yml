@@ -21,9 +21,11 @@ addons:
     sources:
       - sourceline: 'deb https://dl.yarnpkg.com/debian/ stable main'
         key_url: 'https://dl.yarnpkg.com/debian/pubkey.gpg'
+      - sourceline: 'ppa:jonathonf/python-3.6'
     packages: 
       - yarn
       - python3.6
+      - python3-pip
 
 install:
   - yarn
