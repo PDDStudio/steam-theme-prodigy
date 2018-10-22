@@ -1,79 +1,69 @@
 language: generic
 node_js:
-  - "10"
+- '10'
 python:
-  - "2.7.9"
-  - "3.4"
+- 2.7.9
+- '3.4'
 dist: trusty
 sudo: required
-
 stages:
-  - lint
-  - name: package
-    if: branch = master
-  - name: deploy
-    if: branch = develop
-
+- lint
+- name: package
+  if: branch = master
+- name: deploy
+  if: branch = develop
 addons:
   apt:
     update: true
     sources:
-      - sourceline: 'deb https://dl.yarnpkg.com/debian/ stable main'
-        key_url: 'https://dl.yarnpkg.com/debian/pubkey.gpg'
-    packages: 
-      - yarn
-
+    - sourceline: deb https://dl.yarnpkg.com/debian/ stable main
+      key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
+    packages:
+    - yarn
 install:
-  - yarn
-
+- yarn
 before_script:
-  - yarn global add gulp-cli
-
+- yarn global add gulp-cli
 script:
-  - yarn build
-
+- yarn build
 before_deploy:
-  - yarn global add now
-  - pip install --upgrade pip
-  - pip install urllib3[socks]
-  - pip install mkdocs
-  - pip install mkdocs-material
-  - pip install pymdown-extensions
-  - pip install pygments
-#  - sudo pip install --no-cache-dir -r docs/requirements.txt
-  - yarn docs:build
-
+- yarn global add now
+- pip install --upgrade pip
+- pip install urllib3[socks]
+- pip install mkdocs
+- pip install mkdocs-material
+- pip install pymdown-extensions
+- pip install pygments
+- yarn docs:build
 deploy:
-  - provider: script
-    script: now --token $NOW_TOKEN
-    skip_cleanup: true
-    on:
-      all_branches: true
-      master: false
-
+  provider: releases
+  api_key:
+    secure: dNV1NNfkp2Q22X5hWDmHI2QamY1GjG6doODXMc4fm1XQmUhCKg7tPYqMK0Vqn0vGPTtM2bf8Cj75XMLf4SFw/NAcKDhODXx4W9W4DEfP3DX6Oz+1PNzIaulOZ0UfxIUlTEgO973An5i+XQt3/iXA6Ahe2olY7wxRCeS2USI1bzD/hmQTNXNmsFBk2ApfoSIYreH2Y9ll8kkOHuAycWmdl+m06L5hBcFyHs+x/erE6B5/TVwD5Ua5C8mJzlLHFeGw4MZg320CRFaTTHDfbWvZZgaxSK4oRa7E8vhQ6NtcFrrn4LM38F/4qUVXdXaXiyNfca9EViYYKIRiWD8czPuPEemoHFJeTJpRRnOW2sfqTuUM1F4jRLTZ39tUQW1MXfX8r03+DxIgL/KjSOo/8zOi0ZDPU8mr5L6bERwy2nh5lXd7dZk9wbQ00P7/7AdmM7HJHDaPy62jiA9vUtzyEl6wteq4oREDZ2htE6Lc/368kKXGsPe8N35bAbQ7oWS2bI+mPD/c84zQ1drBQ16eLhCFUmNGNHuupo8tpMO5uNDx335CV5gIHlLskmYDCTntQIqVdRsD2+45d4t6dbP09D5ktTR6vGPlWrIob1bgdrI1w8w5uXQ8G2G6Ir+PcSxlzWJToPRdCwkaCslydZEheFRI94XH8xVbEeycQtvBMhjVL8A=
+  file: dist/steam-theme-prodigy.zip
+  on:
+    repo: PDDStudio/steam-theme-prodigy
+    branch: develop
 jobs:
   include:
-    - stage: lint
-      script: 
-        - yarn lint
-        - yarn docs:lint
-    - stage: package
-      script:
-        - yarn build
-    - stage: deploy
-      provider: pages
-      local-dir: dist/docs
-      skip-cleanup: true
-      github-token: $GITHUB_TOKEN
-      keep-history: true
-      on:
-        branch: develop
-
+  - stage: lint
+    script:
+    - yarn lint
+    - yarn docs:lint
+  - stage: package
+    script:
+    - yarn build
+  - stage: deploy
+    provider: pages
+    local-dir: dist/docs
+    skip-cleanup: true
+    github-token: "$GITHUB_TOKEN"
+    keep-history: true
+    on:
+      branch: develop
 notifications:
   email: false
   slack:
     rooms:
-      - 'pddstudio:VcFiW1hwvEHqbCwtBKA38Eh2'
+    - pddstudio:VcFiW1hwvEHqbCwtBKA38Eh2
     on_success: change
     on_failure: always
-
