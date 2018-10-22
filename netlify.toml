@@ -6,6 +6,6 @@
   command = "yarn docs:build"
 
 [context.production]
-  command = ""
+  command = "mkdocs build --clean --config-file docs/mkdocs.yml"
   [context.production.environment]
 
