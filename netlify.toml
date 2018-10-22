@@ -1,0 +1,11 @@
+# deployment configuration for documentation - hosted at netlify (https://netlify.com)
+
+[build]
+  base    = "."
+  publish = "dist/docs"
+  command = "yarn docs:build"
+
+[context.production]
+  command = ""
+  [context.production.environment]
+
