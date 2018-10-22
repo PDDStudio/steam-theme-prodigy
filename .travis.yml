@@ -1,12 +1,8 @@
-language: node_js
+language: generic
 node_js:
   - "10"
 dist: trusty
 sudo: required
-
-cache:
-  directories:
-    - node_modules
 
 stages:
   - lint
@@ -21,11 +17,8 @@ addons:
     sources:
       - sourceline: 'deb https://dl.yarnpkg.com/debian/ stable main'
         key_url: 'https://dl.yarnpkg.com/debian/pubkey.gpg'
-      - sourceline: 'ppa:jonathonf/python-3.6'
     packages: 
       - yarn
-      - python3.6
-      - python3-pip
 
 install:
   - yarn
@@ -38,8 +31,12 @@ script:
 
 before_deploy:
   - yarn global add now
-  - sudo pip3 install --upgrade pip3
-  - sudo pip3 install --no-cache-dir -r docs/requirements.txt
+  - sudo pip install --upgrade pip
+  - sudo pip install mkdocs
+  - sudo pip install mkdocs-material
+  - sudo pip install pymdown-extensions
+  - sudo pip install pygments
+#  - sudo pip install --no-cache-dir -r docs/requirements.txt
   - yarn docs:build
 
 deploy:
