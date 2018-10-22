@@ -37,7 +37,7 @@ script:
 before_deploy:
   - yarn global add now
   - sudo pip install --upgrade pip
-  - sudo pip install -r docs/requirements.txt
+  - sudo pip install --no-cache-dir -r docs/requirements.txt
   - yarn docs:build
 
 deploy:
