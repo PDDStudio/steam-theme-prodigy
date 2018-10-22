@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "10"
 dist: trusty
-sudo: false
+sudo: true
 
 cache:
   directories:
@@ -36,8 +36,8 @@ script:
 
 before_deploy:
   - yarn global add now
-  - pip install --upgrade pip
-  - pip install --user -r docs/requirements.txt
+  - sudo pip install --upgrade pip
+  - sudo pip install --user -r docs/requirements.txt
   - yarn docs:build
 
 deploy:
