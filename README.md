@@ -2,7 +2,7 @@
 
 > A smooth, dark Theme for Steam
 
-[![Build Status](https://travis-ci.com/PDDStudio/steam-theme-prodigy.svg?branch=develop)](https://travis-ci.com/PDDStudio/steam-theme-prodigy)
+[![Build Status](https://travis-ci.com/PDDStudio/steam-theme-prodigy.svg?branch=develop)](https://travis-ci.com/PDDStudio/steam-theme-prodigy) [![Greenkeeper badge](https://badges.greenkeeper.io/PDDStudio/steam-theme-prodigy.svg)](https://greenkeeper.io/)
 
 ## :warning: Notice
 
