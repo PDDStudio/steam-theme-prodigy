@@ -27,7 +27,7 @@
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-bump": "^3.1.1",
-    "gulp-exec": "^3.0.2",
+    "gulp-exec": "^4.0.0",
     "gulp-zip": "^4.2.0",
     "husky": "^1.1.2",
     "lint-staged": "^7.3.0",
