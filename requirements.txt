@@ -70,7 +70,7 @@ PySocks==1.6.8
 python-dateutil==2.7.3
 python-gitlab==1.5.1
 pytz==2018.5
-PyYAML==3.12
+PyYAML==5.4
 requests==2.18.4
 requests-cache==0.4.13
 singledispatch==3.4.0.3
